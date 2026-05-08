@@ -1,0 +1,761 @@
+/* ============================================
+   Barca Koseoglu - Multi-Page Personal Website
+   ============================================ */
+
+:root {
+    --primary: #1a1a2e;
+    --primary-light: #16213e;
+    --accent: #e94560;
+    --accent-hover: #d63d56;
+    --text: #1a1a1a;
+    --text-light: #444;
+    --text-lighter: #666;
+    --bg: #ffffff;
+    --bg-alt: #f8f9fa;
+    --bg-dark: #1a1a2e;
+    --border: #e9ecef;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+    --radius-sm: 6px;
+    --transition: all 0.25s ease;
+    --max-width: 800px;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+.navbar {
+    background: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+}
+
+.nav-logo {
+    display: none;
+}
+
+.nav-logo:hover {
+    color: var(--accent);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 6px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    transition: var(--transition);
+}
+
+/* ============================================
+   Page Content
+   ============================================ */
+.page-content {
+    flex: 1;
+    padding: 40px 0 60px;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.page-intro {
+    color: var(--text-lighter);
+    margin-bottom: 32px;
+    font-size: 1rem;
+}
+
+/* ============================================
+   Home / Bio Page
+   ============================================ */
+.bio-section {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+.bio-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.bio-photo {
+    margin: 20px auto 24px;
+    max-width: 280px;
+}
+
+.bio-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+}
+
+.bio-subtitle {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 28px;
+}
+
+.bio-text {
+    margin-bottom: 28px;
+    text-align: left;
+}
+
+.bio-text p {
+    color: var(--text-light);
+    margin-bottom: 16px;
+    line-height: 1.75;
+    font-size: 1rem;
+}
+
+.bio-text strong {
+    color: var(--text);
+}
+
+.bio-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-bottom: 28px;
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    justify-content: center;
+}
+
+.contact-link {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    color: var(--accent);
+}
+
+.bio-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+.btn-secondary:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   Education Page
+   ============================================ */
+.edu-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.edu-card:hover {
+    box-shadow: var(--shadow);
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.edu-header h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 2px;
+}
+
+.edu-degree {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.edu-meta {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.edu-loc {
+    font-size: 0.9rem;
+    color: var(--text-lighter);
+}
+
+.edu-date {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.edu-gpa {
+    font-size: 0.95rem;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.edu-note {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.edu-coursework {
+    margin-top: 14px;
+}
+
+.edu-coursework h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-lighter);
+    margin-bottom: 10px;
+}
+
+.course-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.course-tag {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* ============================================
+   Experience Page
+   ============================================ */
+.exp-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: var(--transition);
+}
+
+.exp-card:hover {
+    box-shadow: var(--shadow);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.exp-header h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 2px;
+}
+
+.exp-org {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.exp-meta {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.exp-loc {
+    font-size: 0.9rem;
+    color: var(--text-lighter);
+}
+
+.exp-date {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.exp-bullets {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.exp-bullets li {
+    color: var(--text-light);
+    margin-bottom: 10px;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.exp-bullets li:last-child {
+    margin-bottom: 0;
+}
+
+.exp-bullets li strong {
+    color: var(--text);
+}
+
+/* ============================================
+   Certifications Page
+   ============================================ */
+.cert-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: var(--transition);
+}
+
+.cert-card:hover {
+    box-shadow: var(--shadow);
+}
+
+.cert-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.cert-header h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.cert-badge {
+    background: rgba(233, 69, 96, 0.1);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.cert-issuer {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 4px;
+}
+
+.cert-date {
+    font-size: 0.9rem;
+    color: var(--text-lighter);
+    font-style: italic;
+    margin-bottom: 14px;
+}
+
+.cert-desc {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ============================================
+   Activities Page
+   ============================================ */
+.act-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.act-card:hover {
+    box-shadow: var(--shadow);
+}
+
+.act-card:last-child {
+    margin-bottom: 0;
+}
+
+.act-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.act-header h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.act-meta {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.act-date {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.act-bullets {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.act-bullets li {
+    color: var(--text-light);
+    margin-bottom: 8px;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.act-bullets li:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   Skills Page
+   ============================================ */
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.skill-block h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.skill-item:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ============================================
+   Portfolio Page
+   ============================================ */
+.portfolio-empty {
+    text-align: center;
+    padding: 60px 24px;
+    background: var(--bg-alt);
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+}
+
+.empty-icon {
+    color: var(--text-lighter);
+    margin-bottom: 16px;
+}
+
+.portfolio-empty h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.portfolio-empty p {
+    color: var(--text-lighter);
+    font-size: 0.95rem;
+}
+
+/* Portfolio card template styles (for future use) */
+.portfolio-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.portfolio-card:hover {
+    box-shadow: var(--shadow);
+    border-color: var(--accent);
+}
+
+.portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.portfolio-header h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.portfolio-tag {
+    background: rgba(233, 69, 96, 0.1);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.portfolio-date {
+    font-size: 0.9rem;
+    color: var(--text-lighter);
+    margin-bottom: 12px;
+}
+
+.portfolio-desc {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.portfolio-links {
+    display: flex;
+    gap: 16px;
+}
+
+.portfolio-link {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.85rem;
+    color: var(--text-lighter);
+    border-top: 1px solid var(--border);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 640px) {
+    .nav-toggle {
+        display: flex;
+        position: absolute;
+        right: 24px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 24px 20px;
+        gap: 2px;
+        transform: translateY(-150%);
+        transition: var(--transition);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav-link {
+        padding: 10px 12px;
+    }
+
+    .page-content {
+        padding: 28px 0 40px;
+    }
+
+    .page-title {
+        font-size: 1.6rem;
+    }
+
+    .bio-section h1 {
+        font-size: 2rem;
+    }
+
+    .edu-header,
+    .exp-header,
+    .act-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .edu-meta,
+    .exp-meta,
+    .act-meta {
+        text-align: left;
+    }
+
+    .bio-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
